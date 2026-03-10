@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TaskManagerAuth.Models;
 
 namespace TaskManagerAuth.Data
 {
@@ -9,5 +10,7 @@ namespace TaskManagerAuth.Data
             : base(options)
         {
         }
+
+        public DbSet<TodoTask> Tasks { get; set; }
     }
 }
