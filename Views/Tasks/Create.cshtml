@@ -6,34 +6,33 @@
 
 @model TaskManagerAuth.Models.TodoTask
 
-<h1>Create Task</h1>
+<h1 class="mb-4">Create Task</h1>
 
 <form asp-action="Create" method="post">
 
     <div asp-validation-summary="All"></div>
 
-    <div>
-        <label asp-for="Title"></label>
-        <input asp-for="Title" />
+    <div class="mb-3">
+        <label class="form-label" asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
     </div>
     
-    <div>
-        <label asp-for="Description"></label>
-        <input asp-for="Description" />
+    <div class="mb-3">
+        <label class="form-label" asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
     </div>
     
-    <div>
-        <label asp-for="DueDate"></label>
-        <input asp-for="DueDate" />
+    <div class="mb-3">
+        <label class="form-label" asp-for="DueDate"></label>
+        <input class="form-control" asp-for="DueDate" />
     </div>
     
-    <div>
-        <label asp-for="IsCompleted"></label>
-        <input asp-for="IsCompleted" />
+    <div class="mb-3">
+        <label class="form-check-label" asp-for="IsCompleted"> </label>
+        <input class="form-check-input" asp-for="IsCompleted" />
     </div>
 
-    <button type="submit">Create</button>
+    <button class="btn btn-primary" type="submit">Create</button>
+    <a class="btn btn-secondary" asp-action="Index">Back</a>
 
 </form>
-
-<a asp-action="Index">Back</a>

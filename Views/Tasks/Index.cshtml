@@ -6,17 +6,17 @@
 
 @model IEnumerable<TaskManagerAuth.Models.TodoTask>
 
-<h1>My Tasks</h1>
+<h1 class="mb-4">My Tasks</h1>
 
-<a asp-action="Create">Create New Task</a>
+<a class="btn btn-primary mb-3" asp-action="Create">Create New Task</a>
 
-<table>
-    <thead>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
             <th>Title</th>
             <th>Description</th>
             <th>Due Date</th>
-            <th>Completed</th>
+            <th>Status</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -30,8 +30,8 @@
                 <td>@task.DueDate?.ToShortDateString()</td>
                 <td>@(task.IsCompleted ? "✔ Completed" : "❌ Pending")</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@task.Id">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@task.Id">Delete</a>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@task.Id">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@task.Id">Delete</a>
                 </td>
             </tr>
         }
