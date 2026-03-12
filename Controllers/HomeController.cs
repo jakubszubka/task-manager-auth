@@ -15,7 +15,7 @@ namespace TaskManagerAuth.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Tasks");
         }
 
         public IActionResult Privacy()
