@@ -24,6 +24,7 @@ namespace TaskManagerAuth.Controllers
             var userId = _userManager.GetUserId(User);
             var tasks = await _context.Tasks
                 .Where(t => t.UserId == userId)
+                .OrderBy(t => t.DueDate)
                 .ToListAsync();
 
             return View(tasks);
