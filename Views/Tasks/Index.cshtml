@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<TaskManagerAuth.Models.TodoTask>
+
+<h1>My Tasks</h1>
+
+<a asp-action="Create">Create New Task</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Completed</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.Description</td>
+                <td>@task.DueDate</td>
+                <td>@task.IsCompleted</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@task.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@task.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

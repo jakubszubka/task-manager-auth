@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model TaskManagerAuth.Models.TodoTask
+
+<h1>Delete Task</h1>
+
+<p>Are you sure you want to delete this task?</p>
+
+<div>
+    <strong>Title:</strong> @Model.Title
+</div>
+
+<div>
+    <strong>Description:</strong> @Model.Description
+</div>
+
+<div>
+    <strong>Due Date:</strong> @Model.DueDate
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    @Html.AntiForgeryToken()
+    <button type="submit">Yes, Delete</button>
+    <a asp-action="Index">Cancel</a>
+</form>
+

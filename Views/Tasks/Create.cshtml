@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model TaskManagerAuth.Models.TodoTask
+
+<h1>Create Task</h1>
+
+<form asp-action="Create" method="post">
+
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+    </div>
+    
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+    </div>
+    
+    <div>
+        <label asp-for="DueDate"></label>
+        <input asp-for="DueDate" />
+    </div>
+    
+    <div>
+        <label asp-for="IsCompleted"></label>
+        <input asp-for="IsCompleted" />
+    </div>
+
+    <button type="submit">Create</button>
+
+</form>
+
+<a asp-action="Index">Back</a>
